@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 const Container = styled.div`
@@ -11,7 +12,7 @@ const Container = styled.div`
 const Header = () => {
   return (
     <Container>
-      <h1>Animatrix</h1>
+      <motion.h1 animate={{ x: 100 }}>Animatrix</motion.h1>
     </Container>
   );
 };

@@ -18,9 +18,9 @@ const theme = {
     color: "#ffffff",
   },
   spacings: {
-    small: "10px",
-    medium: "15px",
-    large: "20px",
+    small: 10,
+    medium: 15,
+    large: 20,
   },
 };
 
