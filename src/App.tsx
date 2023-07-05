@@ -8,6 +8,8 @@ import Horizontal from "./components/layout/Horizontal";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: overlay;
+  align-items: center;
   color: ${(p) => p.theme.colors.text};
   background-color: ${(p) => p.theme.application.backgroundColor};
   gap: ${(p) => p.theme.spacings.medium}px;
@@ -15,12 +17,12 @@ const AppContainer = styled.div`
 `;
 
 const AppContent = styled.div`
-  padding: ${(p) => p.theme.spacings.medium}px
-    ${(p) => p.theme.spacings.medium}px;
+  width: 80vw;
   background-color: ${(p) => p.theme.application.backgroundColor};
   display: flex;
   flex-direction: column;
-  gap: ${(p) => p.theme.spacings.large * 5}px;
+  gap: ${(p) => p.theme.spacings.large * 2}px;
+  align-items: center;
 `;
 
 function App() {
@@ -55,7 +57,7 @@ function App() {
               savor the whimsical dance of bouncing fruit!{" "}
             </p>
           </Vertical>
-          <Horizontal>
+          <Horizontal style={{ justifyContent: "space-evenly" }}>
             <motion.img
               style={{ width: 100, height: 100 }}
               src="https://purepng.com/public/uploads/large/purepng.com-orangefruitsorangetasteysweetripefood-981524726253ocbqg.png"

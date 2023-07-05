@@ -1,19 +1,25 @@
 import { styled } from "styled-components";
 import { ThemeSpacing } from "../../types/model";
-import { PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren } from "react";
 
 type Props = PropsWithChildren & {
-  spacing?: ThemeSpacing;
+  spacing?: ThemeSpacing | number;
+  style?: CSSProperties;
 };
 
-const Container = styled.div<{ spacing: ThemeSpacing }>`
+const Container = styled.div<{ spacing: ThemeSpacing | number }>`
   display: flex;
   flex-direction: row;
-  gap: ${(p) => p.theme.spacings[p.spacing]}px;
+  gap: ${(p) =>
+    typeof p.spacing === "number" ? p.spacing : p.theme.spacings[p.spacing]}px;
 `;
 
-const Horizontal = ({ spacing = "medium", children }: Props) => {
-  return <Container spacing={spacing}>{children}</Container>;
+const Horizontal = ({ spacing = "medium", children, style }: Props) => {
+  return (
+    <Container style={style} spacing={spacing}>
+      {children}
+    </Container>
+  );
 };
 
 export default Horizontal;

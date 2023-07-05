@@ -12,7 +12,7 @@ const Container = styled.div`
 const Header = () => {
   return (
     <Container>
-      <motion.h1 animate={{ x: 100 }}>Animatrix</motion.h1>
+      <motion.h1 animate={{ opacity: 1 }}>Animatrix</motion.h1>
     </Container>
   );
 };
