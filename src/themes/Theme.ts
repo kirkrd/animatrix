@@ -26,6 +26,4 @@ const theme = {
 
 export type Theme = typeof theme;
 
-export const ThemeDefault: Theme = {
-  ...theme,
-};
+export const ThemeDefault: Theme = theme;

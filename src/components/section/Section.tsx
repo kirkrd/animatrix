@@ -13,6 +13,7 @@ const Section = (props: PropsWithChildren) => {
       whileHover={{ scale: 1.1 }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
     >
       {props.children}
     </SectionContainer>
