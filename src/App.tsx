@@ -110,6 +110,24 @@ function App() {
                 />
               </Horizontal>
             </Section>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              style={{
+                backgroundColor: theme.colors.surface,
+                width: "100%",
+                padding: theme.spacings.medium,
+                height: "200px",
+              }}
+              viewport={{ margin: "-20px" }}
+            >
+              <Horizontal>
+                <Vertical>
+                  <h2>Here is a funny section with some text </h2>
+                  <p>Some text that is inspired by lorem ipsum.</p>
+                </Vertical>
+              </Horizontal>
+            </motion.div>
           </AppContent>
         </AppContainer>
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { styled, useTheme } from "styled-components";
-import { FaRegLightbulb } from "react-icons/fa";
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 import { useContext } from "react";
 import { ThemeEditorContext } from "../../App";
 import { ThemeLight } from "../../themes/LightTheme";
@@ -24,15 +24,14 @@ const SwitchButton = styled(motion.button)`
 const Header = () => {
   const { setTheme } = useContext(ThemeEditorContext);
   const theme = useTheme();
+  const isLight = theme === ThemeLight;
   return (
     <Container>
       <motion.h1 animate={{ opacity: 1 }}>Animatrix</motion.h1>
       <SwitchButton
-        onClick={() =>
-          setTheme(theme === ThemeLight ? ThemeDefault : ThemeLight)
-        }
+        onClick={() => setTheme(isLight ? ThemeDefault : ThemeLight)}
       >
-        <FaRegLightbulb />
+        {isLight ? <FaRegLightbulb /> : <FaLightbulb />}
       </SwitchButton>
     </Container>
   );
